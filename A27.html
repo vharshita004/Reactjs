@@ -20,7 +20,7 @@
     </style> -->
 </head>
 <body>
-    <div id="root" style="display:flex;justify-content:space-evenly"></div>
+    <div id="root" style="margin-top:50px; display:flex;justify-content:space-evenly"></div>
    
     <script type="text/babel">
         const arr = [
@@ -36,7 +36,7 @@
                     ];
         
         function record(obj) {  
-            const style={ width : '270px', textAlign : 'center', boxShadow : '0px 0px 10px #444', padding : '10px'}; 
+            const style={ width : '270px', textAlign : 'center', boxShadow : '0px 0px 10px #800', padding : '10px'}; 
             return (<div style={style} class="a">
                     <img src={obj.pic} height="75%" /> 
                     <h3>{obj.name}</h3>

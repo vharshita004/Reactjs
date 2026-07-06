@@ -20,7 +20,7 @@
     </style> -->
 </head>
 <body>
-    <div id="root" style="margin-top:50px; display:flex;justify-content:space-evenly"></div>
+    <div id="root" style="border:1px solid green"></div>
    
     <script type="text/babel">
         const arr = [
@@ -35,20 +35,34 @@
                         }
                     ];
         
-        function record(obj) {   
-            return (<div style={{ width : '270px', textAlign : 'center', boxShadow : '0px 0px 10px #444', padding : '10px'}} class="a">
+        function record(obj) {  
+            const style={ width : '270px', textAlign : 'center', boxShadow : '0px 0px 10px #780', padding : '10px'}; 
+            return (<div style={style} class="a">
                     <img src={obj.pic} height="75%" /> 
                     <h3>{obj.name}</h3>
                     <p>{obj.college}</p>
                 </div>);
         }
 
-        ReactDOM.render([
-                            record(arr[0]), 
-                            record(arr[1]), 
-                            record(arr[2])
-                        ], 
-                        document.querySelector('#root'));
+        function createThumbnails() {
+            return (
+                     <div style=
+                         {{marginTop:'50px', display:'flex', justifyContent:'space-evenly', border:'1px dashed red'}}>
+                         {record(arr[0])}
+                         {record(arr[1])}
+                         {record(arr[2])}
+                     </div>
+                   );
+        }
+
+        ReactDOM.render(createThumbnails(), document.querySelector('#root'));
+
+        // ReactDOM.render([
+        //                     record(arr[0]), 
+        //                     record(arr[1]), 
+        //                     record(arr[2])
+        //                 ], 
+        //                 document.querySelector('#root'));
     </script>
 </body>
 </html>
