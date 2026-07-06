@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!--<style>
+        /*.a {
+           border: 1px solid red; 
+            width: 270px;
+            text-align: center;
+            box-shadow: 0px 0px 10px #444;
+            padding: 10px;
+        } */
+    </style> -->
+</head>
+<body>
+    <div id="root" style="display:flex;justify-content:space-evenly"></div>
+   
+    <script type="text/babel">
+        const arr = [
+                        {
+                            pic:'nobita.jpg', name:'Nobita Khurana', college:'Global'        
+                        },
+                        {
+                            pic:'kaliya.jpg', name:'Kaliya Sanghi', college:'GGITS'
+                        },
+                        {
+                            pic:'bheem.jpg', name:'Bheem Palkiwal', college:'SRIT' 
+                        }
+                    ];
+        
+        function record(obj) {  
+            const style={ width : '270px', textAlign : 'center', boxShadow : '0px 0px 10px #444', padding : '10px'}; 
+            return (<div style={style} class="a">
+                    <img src={obj.pic} height="75%" /> 
+                    <h3>{obj.name}</h3>
+                    <p>{obj.college}</p>
+                </div>);
+        }
+
+        ReactDOM.render([
+                            record(arr[0]), 
+                            record(arr[1]), 
+                            record(arr[2])
+                        ], 
+                        document.querySelector('#root'));
+    </script>
+</body>
+</html>
