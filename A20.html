@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function record() {
+            return (
+                     <div>
+                        <h1>Helooo</h1>
+                        <hr/>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum repellat blanditiis et exercitationem veritatis. Voluptatum quia quidem omnis incidunt quis sed reiciendis voluptatibus repellendus temporibus odio ex, inventore maiores accusantium.
+                           In temporibus saepe culpa eum qui sequi molestiae ipsa voluptate, ab aliquam repudiandae quae dolores aliquid reprehenderit ipsam, vel velit facere animi eaque dolorem. Sunt ad distinctio vel amet odit.
+                        </p>
+                     </div>
+                   );
+        }
+
+         ReactDOM.render([record(), record(), record(), record()], document.querySelector('#root'));
+    </script>
+</body>
+</html>
