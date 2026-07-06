@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+</head>
+<body>
+    <div id="w"></div>
+
+    <script>
+        const div = React.createElement('div', 
+                                            null, 
+                                            [
+                                                React.createElement('img', 
+                                                                {src: 'https://i.pinimg.com/474x/65/0c/38/650c38d0aeea6ee970b4f8d3ce448356.jpg'}, 
+                                                                null),
+                                                React.createElement('img', 
+                                                                {src: 'https://i.pinimg.com/474x/65/0c/38/650c38d0aeea6ee970b4f8d3ce448356.jpg'}, 
+                                                                null),
+                                                React.createElement('img', 
+                                                                {src: 'https://i.pinimg.com/474x/65/0c/38/650c38d0aeea6ee970b4f8d3ce448356.jpg'}, 
+                                                                null)
+                                            ]);
+
+        ReactDOM.render(div, document.querySelector('#w'));
+    </script>
+</body>
+</html>
