@@ -11,12 +11,12 @@
 
 </head>
 <body>
-    <div id="w"></div>
+    <div id="root"></div>
 
     <script type="text/babel">
-        const p = <p>Some Special Text</p>;
-
-        ReactDOM.render(p, document.querySelector('#w'));
-    </script> 
+        const x = <h1>Some Text</h1>;
+        
+        ReactDOM.render([x,x,x,x,x,], document.querySelector('#root'));
+    </script>
 </body>
 </html>

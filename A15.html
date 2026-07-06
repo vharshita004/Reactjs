@@ -11,12 +11,17 @@
 
 </head>
 <body>
-    <div id="w"></div>
+   <div id="root"></div>
 
-    <script type="text/babel">
-        const p = <p>Some Special Text</p>;
+   <script type="text/babel">
+     const div = (
+                  <div> 
+                    <h1>Topic One :: </h1>
+                    <p>This is paragraph ::</p>
+                    </div>
+                );
 
-        ReactDOM.render(p, document.querySelector('#w'));
-    </script> 
+    ReactDOM.render(div, document.querySelector('#root'));
+   </script>
 </body>
 </html>
