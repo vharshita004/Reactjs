@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function Pic(obj) {
+            return <img src={obj.photo}  />
+        }
+        function Heading(obj) {
+            return <h3>{obj.name}</h3>;
+        }
+
+        function Para(obj) {
+            return <p>{obj.college}</p>
+        }
+
+        function Cards(obj) {
+            const style = {width : '300px', textAlign : 'center', padding : '10px', boxShadow : '0px 0px 10px #444', marginTop : '10px' }
+            return ( 
+                    <div style={style}>
+                       <Pic photo={obj.pic} />
+                       <Heading name={obj.name} />
+                       <Para college={obj.college} />
+                     </div>
+                    )
+        }
+
+        function Block() {
+            return (
+                <div style={{marginTop : '50px', display:'flex', justifyContent:'space-evenly'}}>
+                   <Cards pic="kaliya.jpg" name="Kaliya Singh" college="GLOBAL" />
+                   <Cards pic="ninja.jpg" name="Hathodi Sharma" college="GGITS" />
+                   <Cards pic="raju.jpg" name="Raju Shastri" college="SRIT" />
+                </div>
+            )
+
+        }
+
+        ReactDOM.render(<Block/>, document.querySelector('#root'));
+    </script>
+</body>
+</html>
