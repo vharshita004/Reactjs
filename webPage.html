@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+   <style>
+      * {
+         padding: 0px;
+         margin: 0px;
+         font-family : verdana;
+         /* color: white; */
+      }
+
+      #navBar {
+         height: 70px;
+         background-color: #5AA9E6;
+         padding: 20px;
+         display: flex;
+         align-items: center;
+      }
+
+      #logo {
+         height: 70px;
+         width: 70px;
+         border: 1px solid;
+         border-radius: 50%;
+         box-shadow: 0px 0px 10px;
+         margin-left: 100px;
+      }
+
+
+      .btn a {
+         text-decoration: none;
+         color : black;
+         font-size: 25px ;
+         margin-right: 27px;
+         background-color :#ffe45e;
+         /* border :1px solid ; */
+         border-radius : 4px;
+         box-shadow : 0px 0px 10px;
+         padding : 5px;
+         
+      }
+
+      #companyName {
+         margin: 40px;
+         margin-right: 500px;
+         color : black;
+         font-size: 25px;
+          background-color :#ffe45e;
+         /* border :1px solid ; */
+         border-radius : 5px;
+         box-shadow : 0px 0px 10px;
+         padding : 5px;
+      }
+
+      #h {
+         height: 80px;
+         font-size: 50px;
+         text-align: center;
+         background-color: #FF6392;
+         width: 700px;
+         padding: 10px;
+         border-radius: 10px;
+         box-shadow: 0px 0px 20px #FFE45E;
+         align-items: center;
+         margin-left: 27%;
+         margin-top: 25px;
+      }
+
+      #para {
+         font-size : 25px;
+         color : #2348c1;
+         margin : 70px;
+         text-align : center;
+      }
+
+      #card {
+         height : 500px;
+         width : 400px;
+         /* border : 1px solid #cd2b2b; */
+         border-radius : 10px;
+         box-shadow : 0px 0px 20px #444;
+         /* display : flex;
+         justify-content : space-evenly; */
+         padding : 20px;
+         margin-right : 70px; 
+          /* background-color: #FF6392; */
+      }
+
+      #h3, #pa {
+           margin-top : 20px;
+           text-align : center;
+      }
+   </style>
+</head>
+
+<body>
+   <div id="root"></div>
+
+   <script type="text/babel">
+      function Logo() {
+         return <img src="iceCreamLogo.jpeg" id="logo" />
+      }
+
+      function CompanyName() {
+         return <span id="companyName" >Unicone</span>
+      }
+
+      function Buttons(obj) {
+         return <span className="btn"><a href="#">{obj.name}</a></span>
+      }
+
+      function Heading() {
+         return <h1 id="h" >Scoops of Happiness!</h1>
+      }
+
+      function Para() {
+         return (
+            <p id="para">
+               Welcome to Unicone Ice Cream Parlor, a place where every scoop is crafted to bring joy, refreshment, and unforgettable memories. We believe that ice cream is more than just a dessert—it is a moment of happiness shared with family, friends, and loved ones. Our parlor offers a delightful range of premium ice creams, sundaes, milkshakes, and frozen treats made with high-quality ingredients and rich, creamy flavors.
+            </p>
+         )
+      }
+
+      function IceImage(obj) {
+         return <img src={obj.src} />
+      }
+
+      function IceName(obj) {
+         return <h3 id="h3">{obj.name}</h3>
+      } 
+
+      function IcePara(obj) {
+         return <p id="pa">{obj.para}</p>
+      }
+
+      function NavBar() {
+         return (
+            <div id="navBar" >
+               <Logo />
+               <CompanyName />
+               <Buttons name="Menu" />
+               <Buttons name="Orders" />
+               <Buttons name="About Us" />
+               <Buttons name="Contact Us" />
+            </div>
+         )
+      }
+
+      function Card(obj) {
+         return (
+            <div id="card">
+               <IceImage src= {obj.src} />
+               <IceName name={obj.name} />
+               <IcePara para={obj.para} />
+            </div>
+         )
+      }
+
+      function Thumbnails(obj) {
+         return (
+            <div style={{display:'flex', justifyContext:'space-evenly'}} >
+               <Card name="Chocolate Delight"
+                     src="CD.jpeg" 
+                     para="A rich and creamy chocolate ice cream made with premium cocoa, offering a smooth texture and deep chocolate flavor that melts in your mouth with every bite." />
+
+               <Card name="Mango Magic"
+                     src="MMpng.png" 
+                     para="A tropical treat bursting with the flavor of ripe mangoes, blended into creamy ice cream to create a sweet and refreshing dessert experience." />
+
+               <Card name="Vanilla Dream"
+                     src="VD.png" 
+                     para="A classic favorite made from pure vanilla extract and fresh cream, known for its smooth, velvety texture and timeless flavor loved by all ages." />
+            </div>
+         )
+
+      }
+
+      function BodyCenter() {
+         return (
+            <div style={{margin:'100px'}}>
+               <Heading />
+               <Para />
+               <Thumbnails/>
+            </div>
+         )
+      }
+
+
+      ReactDOM.render(<> <NavBar />, <BodyCenter /> </>, document.querySelector('#root'));
+   </script>
+</body>
+
+</html>
